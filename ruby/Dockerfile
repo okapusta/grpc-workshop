@@ -7,4 +7,4 @@ RUN bundle install
 
 EXPOSE 9292
 
-CMD ["rerun", "rackup"]
+CMD ["bundle", "exec", "rerun -b 'rackup -o 0.0.0.0'"]
