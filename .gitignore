@@ -1,0 +1,5 @@
+*.swp
+api.env
+server.env
+docker-compose.yml
+go/vendor

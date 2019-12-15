@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  server:
+    image: grpc-workshop/go-server:dev
+    build:
+      context: ./go
+    environment:
+      APPOPTICS_SERVICE_KEY: '<your-api-key>:goservice'
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./go:/go/src/app
+
+  api:
+    image: grpc-workshop/ruby-api:dev
+    build:
+      context: ./ruby
+    environment:
+      APPOPTICS_SERVICE_KEY: '<your-api-key>:ruby-api'
+    ports:
+      - "9292:9292"
+    volumes:
+      - ./ruby:/app

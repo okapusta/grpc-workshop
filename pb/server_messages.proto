@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service MyAwesomeService {
+  rpc GetSomeData (GetSomeDataRequest) returns (GetSomeDataResponse) {}
+}
+
+message GetSomeData {
+  int32 id =  1;
+}
+
+message GetSomeDataResponse {
+  int32 id = 1;
+  string name = 2;
+  Tags tags = 3;
+}
+
+message Tags {
+  map<string, string> tags = 1;
+}
