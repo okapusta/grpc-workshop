@@ -4,7 +4,7 @@ service MyAwesomeService {
   rpc GetSomeData (GetSomeDataRequest) returns (GetSomeDataResponse) {}
 }
 
-message GetSomeData {
+message GetSomeDataRequest {
   int32 id =  1;
 }
 

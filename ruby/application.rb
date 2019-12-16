@@ -1,9 +1,10 @@
 require 'bundler'
+require "sinatra/json"
 
 Bundler.require
 
 class Application < Sinatra::Base
   get '/' do
-    puts 'Hello world!'
+    json kiszka: 'majonez'
   end
 end
