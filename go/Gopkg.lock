@@ -2,41 +2,6 @@
 
 
 [[projects]]
-  digest = "1:625ae19932ae6ee85e29150b875a906434331df3847495787305605c2bc902a7"
-  name = "github.com/appoptics/appoptics-apm-go"
-  packages = [
-    "v1/ao",
-    "v1/ao/internal/bson",
-    "v1/ao/internal/config",
-    "v1/ao/internal/hdrhist",
-    "v1/ao/internal/host",
-    "v1/ao/internal/log",
-    "v1/ao/internal/metrics",
-    "v1/ao/internal/reporter",
-    "v1/ao/internal/reporter/collector",
-    "v1/ao/internal/utils",
-  ]
-  pruneopts = "UT"
-  revision = "963bee1cad0802a6c2fd28c3180d4f2e15dba835"
-  version = "v1.12.0"
-
-[[projects]]
-  digest = "1:61406f6571eeb97717bdfaac37fa0bc5260621c4cbf3ce7635e9828dcbb5258a"
-  name = "github.com/cespare/xxhash"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "d7df74196a9e781ede915320c11c378c1b2f3a1f"
-  version = "v2.1.1"
-
-[[projects]]
-  digest = "1:00eb5d8bd96289512920ac43367d5bee76bbca2062da34862a98b26b92741896"
-  name = "github.com/coocood/freecache"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "3c79a0a23c1940ab4479332fb3e0127265650ce3"
-  version = "v1.1.0"
-
-[[projects]]
   digest = "1:f5ce1529abc1204444ec73779f44f94e2fa8fcdb7aca3c355b0c95947e4005c6"
   name = "github.com/golang/protobuf"
   packages = [
@@ -51,19 +16,18 @@
   version = "v1.3.2"
 
 [[projects]]
-  digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
-  name = "github.com/pkg/errors"
-  packages = ["."]
+  branch = "master"
+  digest = "1:6ad0a58dba6b71b9cd0280564d87c186bf8bab0282bc031e54e6a946660d77ee"
+  name = "github.com/okapusta/grpc-workshop"
+  packages = ["go/pb"]
   pruneopts = "UT"
-  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
-  version = "v0.8.1"
+  revision = "f9a87055dd89b2786d09a2d131d57f1f1ec00a77"
 
 [[projects]]
   branch = "master"
-  digest = "1:3117136e2c2813f11f7fe33931a6604deec77fb1faa304c1a8e27b6fdfbe0ba8"
+  digest = "1:257a75d024975428ab9192bfc334c3490882f8cb21322ea5784ca8eca000a910"
   name = "golang.org/x/net"
   packages = [
-    "context",
     "http/httpguts",
     "http2",
     "http2/hpack",
@@ -159,28 +123,15 @@
   revision = "1a3960e4bd028ac0cec0a2afd27d7d8e67c11514"
   version = "v1.25.1"
 
-[[projects]]
-  branch = "v2"
-  digest = "1:2642fd0b6900c77247d61d80cf2eb59a374ef4ffc2d25a1b95b87dc355b2894e"
-  name = "gopkg.in/mgo.v2"
-  packages = [
-    "bson",
-    "internal/json",
-  ]
-  pruneopts = "UT"
-  revision = "a6b53ec6cb22a3699387a57a161566f9402ee85b"
-
-[[projects]]
-  digest = "1:b75b3deb2bce8bc079e16bb2aecfe01eb80098f5650f9e93e5643ca8b7b73737"
-  name = "gopkg.in/yaml.v2"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "1f64d6156d11335c3f22d9330b0ad14fc1e789ce"
-  version = "v2.2.7"
-
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/appoptics/appoptics-apm-go/v1/ao"]
+  input-imports = [
+    "github.com/golang/protobuf/proto",
+    "github.com/okapusta/grpc-workshop/go/pb",
+    "google.golang.org/grpc",
+    "google.golang.org/grpc/codes",
+    "google.golang.org/grpc/status",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -2,7 +2,7 @@
 # Source: server_messages.proto for package ''
 
 require 'grpc'
-require 'server_messages_pb'
+require_relative './server_messages_pb'
 
 module MyAwesomeService
   class Service

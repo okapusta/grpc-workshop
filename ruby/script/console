@@ -1,3 +1,3 @@
 #!/bin/bash
 
-irb -r ./client.rb
+irb -r ./application.rb
