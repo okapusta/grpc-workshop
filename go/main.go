@@ -14,7 +14,7 @@ func requestHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-  fmt.Printf("Start\n")
+	fmt.Printf("Start\n")
 	http.HandleFunc("/", ao.HTTPHandler(requestHandler))
-	fmt.Printf("%v", http.ListenAndServe(":" + strconv.Itoa(Port), nil))
+	fmt.Printf("%v", http.ListenAndServe(":"+strconv.Itoa(Port), nil))
 }
