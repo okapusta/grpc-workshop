@@ -11,9 +11,11 @@ message GetSomeDataRequest {
 message GetSomeDataResponse {
   int32 id = 1;
   string name = 2;
-  Tags tags = 3;
+  map<string,string> tags = 3;
+  repeated Interest interests = 4;
 }
 
-message Tags {
-  map<string, string> tags = 1;
+message Interest {
+  string name = 1;
+  string value = 2;
 }

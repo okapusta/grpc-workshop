@@ -7,8 +7,7 @@ services:
       context: ./go
     environment:
       APPOPTICS_SERVICE_KEY: '<your-api-key>:goservice'
-    ports:
-      - "8090:8090"
+      GRPC_PORT: 8090
     volumes:
       - ./go:/go/src/app
 
@@ -18,7 +17,10 @@ services:
       context: ./ruby
     environment:
       APPOPTICS_SERVICE_KEY: '<your-api-key>:ruby-api'
+      GRPC_HOST: 'server:8090'
     ports:
       - "9292:9292"
     volumes:
       - ./ruby:/app
+    links:
+      - server

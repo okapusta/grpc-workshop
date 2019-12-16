@@ -21,16 +21,17 @@ func (s *myAwesomeServer) GetSomeData(ctx context.Context, req *pb.GetSomeDataRe
 	fmt.Printf("Requested ID: %d\n", id)
 
 	// let's build response
-	tags := pb.Tags{
-		Tags: map[string]string{
-			"job": "developer",
-			"likes": "pizza",
-		},
+	tags := map[string]string{
+		"job": "developer",
+		"likes": "pizza",
 	}
+	var interests []*pb.Interest
+	interests = append(interests, &pb.Interest{Name: "festivals", Value: "alot"})
 	response := pb.GetSomeDataResponse{
 		Id: id,
 		Name:  "Oskar",
-		Tags: &tags,
+		Tags: tags,
+		Interests: interests,
 	}
 	return &response, nil
 }

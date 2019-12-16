@@ -10,13 +10,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "GetSomeDataResponse" do
     optional :id, :int32, 1
     optional :name, :string, 2
-    optional :tags, :message, 3, "Tags"
+    map :tags, :string, :string, 3
+    repeated :interests, :message, 4, "Interest"
   end
-  add_message "Tags" do
-    map :tags, :string, :string, 1
+  add_message "Interest" do
+    optional :name, :string, 1
+    optional :value, :string, 2
   end
 end
 
 GetSomeDataRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("GetSomeDataRequest").msgclass
 GetSomeDataResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("GetSomeDataResponse").msgclass
-Tags = Google::Protobuf::DescriptorPool.generated_pool.lookup("Tags").msgclass
+Interest = Google::Protobuf::DescriptorPool.generated_pool.lookup("Interest").msgclass
